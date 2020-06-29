@@ -9,9 +9,20 @@ class HelloWorld extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
-      home: new Material(
-        child: new Center(
-          child: new Text("Hello World!"),
+      theme: ThemeData(
+        primarySwatch: Colors.purple
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+        ),
+        body: Center(
+          child: Text('Hello World!',
+            style: TextStyle(
+              color: Colors.blueGrey,
+              fontSize: 50.0,
+              fontStyle: FontStyle.italic,
+            ),),
         ),
       ),
     );
