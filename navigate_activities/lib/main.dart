@@ -1,23 +1,52 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MaterialApp(
+      title: 'Navigation Pages App',
+      home: FirstRoute(),
+    )
+  );
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Navigate Example'),
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First route'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('Tap me!'),
+          onPressed: () {
+            
+            Navigator.push(context, MaterialPageRoute(
+                builder: (BuildContext context) => SecondRoute()
+            ));
+          },
         ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World!'),
-          ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Second route'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('Go back!'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+
         ),
       ),
     );
