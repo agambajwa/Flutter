@@ -1,5 +1,5 @@
 # Flutter
-My progress to learn FLutter and its widgets.
+My progress to learn Flutter and its widgets.
 
 ## Built With 
 - [Flutter](https://flutter.dev/)
